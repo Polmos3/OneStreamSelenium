@@ -1,0 +1,5 @@
+{
+    "dotnet.unitTestDebuggingOptions": {},
+    "testExplorer.showOnRun": true,
+    "testExplorer.hideEmptyLog": false
+}
