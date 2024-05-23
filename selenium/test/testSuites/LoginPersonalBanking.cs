@@ -1,9 +1,7 @@
 ﻿namespace selenium;
 using System;
-using System.ComponentModel;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
 using selenium.PageObjects;
 using Xunit;
 
@@ -39,7 +37,7 @@ public class LoginPersonalBanking : IClassFixture<LoginPersonalBankingFixture>
     {
         var userID = Environment.GetEnvironmentVariable("USER_ID");
         loginPage.Navigate();
-        loginPage.ClickAccountLogin();
+        loginPage.HoverOverAccountLogin();
         loginPage.ClickPersonalBankingLogin();
         loginPage.TypeUserId(userID);
         Assert.Equal(userID, loginPage.GetUserId());

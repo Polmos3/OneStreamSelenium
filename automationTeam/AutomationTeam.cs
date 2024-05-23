@@ -2,36 +2,30 @@
 
 public class AutomationTeam
 {
-
     private List<string> memberNames;
 
     public AutomationTeam(string memberName)
     {
         memberNames = [memberName];
     }
-
     public AutomationTeam AddMemeber(string memeberName)
     {
         memberNames.Add(memeberName);
         return this;
     }
-
     public int GetMemebersCount()
     {
         return memberNames.Count;
     }
-
     public void RemoveMember(string memberName)
     {
         memberNames.Remove(memberName);
     }
-
     public void SortNames()
     {
         memberNames.Sort();
         PrintMembers();
     }
-
     public void PrintMembers()
     {
         foreach (string memberName in memberNames)
@@ -39,14 +33,6 @@ public class AutomationTeam
             Console.WriteLine(memberName);
         }
     }
-
-
-
-    public List<string> GetMemebers()
-    {
-        return memberNames;
-    }
-
     public int CountDeletions(string text)
     {
         string formatedText = text.Trim().ToLower();
@@ -55,13 +41,14 @@ public class AutomationTeam
     }
 
     // Recursive approach 
-    // Since the repeated caracters are deleted, the string is traverse form left ot right
+    // Since the repeated characters are deleted, the string is traverse from left ot right
     // Steps:
     // Start traversing the string from index 0 
-    // If char in curent index is equal to the next one
+    // If char in current index is equal to the next one
     // Add one to the count and call function with current index and a substring removing the repeated char
     // If chars are not equal call function and increase the currentIndex
-    // When currentIndex is 
+    // It finish when the current index is at the end of the string
+
     private int countDeletionRec(string text, int currentIndex)
     {
         if (currentIndex >= text.Length - 1)
